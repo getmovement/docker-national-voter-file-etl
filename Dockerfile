@@ -13,7 +13,7 @@ RUN pip3 install --upgrade pip requests
 
 RUN apt-get install -q -y python-psycopg2 libpq-dev python-pandas
 
-RUN pip3 install usaddress psycopg2 
+RUN pip3 install usaddress psycopg2 pandas
 
 # Install Pentaho Data Integration
 # Init ENV
@@ -32,3 +32,4 @@ RUN /usr/bin/wget --progress=dot:giga http://downloads.sourceforge.net/project/p
     /usr/bin/unzip -q /tmp/pdi-ce-${PENTAHO_TAG}.zip -d  $PENTAHO_HOME; \
      rm /tmp/pdi-ce-${PENTAHO_TAG}.zip
 
+RUN pip install jsonmerge
